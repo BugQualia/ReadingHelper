@@ -20,6 +20,21 @@ const Workbench = (props) => {
     );
   };
 
+  const InputField = (props) => {
+    const aaa = React.useState();
+    return (
+      <>
+        <p>aaaaaaaa</p>
+        <p>asd asd replace</p>
+        <p>aaaaaaaa asd</p>
+        <p>aaaaaaaa</p>
+      </>
+    );
+  };
+
+  const text_displayer = InputField();
+  const highlight_displayer = text_displayer;
+
   return (
     <div>
       <input ref={highlightMe} placeholder="text"></input>
@@ -27,14 +42,20 @@ const Workbench = (props) => {
       <button onClick={Highlight}>aaaa!</button>
       <div
         id="text"
+        className="main_workbench"
         contentEditable="true"
         aria-disabled="false"
         spellCheck="true"
       >
-        <p>aaaaaaaa</p>
-        <p>asd asd replace</p>
-        <p>aaaaaaaa asd</p>
-        <p>aaaaaaaa</p>
+        {text_displayer}
+      </div>
+      <div
+        className="main_workbench"
+        contentEditable="true"
+        aria-disabled="false"
+        spellCheck="true"
+      >
+        {highlight_displayer}
       </div>
     </div>
   );
